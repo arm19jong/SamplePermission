@@ -24,11 +24,10 @@ public class MainActivity extends AppCompatActivity {
             case REQUEST_CODE_ASK_PERMISSIONS:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // Permission Granted
-//                    insertDummyContact();
                     openCamera();
                 } else {
                     // Permission Denied
-                    Toast.makeText(MainActivity.this, "WRITE_CONTACTS Denied", Toast.LENGTH_SHORT)
+                    Toast.makeText(MainActivity.this, "Camera Denied", Toast.LENGTH_SHORT)
                             .show();
                 }
                 break;
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         startActivity(intent);
     }
+
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
